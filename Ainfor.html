@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passe Leve</title>
     <link rel="stylesheet" href="Binfor.css">
+    <script src="https://unpkg.com/imask"></script>
 </head>
 <body>
     <div class="container">
@@ -12,15 +13,22 @@
             <div class="form-container">
                 <h2 class="form-title">informe seus dados</h2>
                 <form id="dataForm">
-                    <input type="text" id="nome" placeholder="Nome">
-                    <input type="number" id="idade" placeholder="Idade">
-                    <select id="sexo">
+                    <input type="text" id="nome" placeholder="Nome" required>
+                    <input type="number" id="idade" placeholder="Idade" min="0" required>
+                    <select id="sexo" required>
                         <option value="" disabled selected>Sexo</option>
                         <option value="feminino">Feminino</option>
                         <option value="masculino">Masculino</option>
                         <option value="nao-informado">Não Informar</option>
-                    </select>
-                    <input type="number" id="imc" placeholder="IMC">
+                   
+                    <input type="text" id="contato" placeholder="Telefone ou E-mail" required>
+
+                </select>
+                    <input type="number" id="altura" placeholder="Altura (m.cm, Ex: 1.75)" min="0.1" step="0.01" required>
+                    <input type="number" id="peso" placeholder="Peso (kg)" min="0.1" step="0.1" required>
+                    
+                    <div id="resultado-imc"></div>
+                    
                     <button type="submit" class="btn-confirmar">Confirmar</button>
                 </form>
             </div>

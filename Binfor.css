@@ -21,15 +21,12 @@ body, html {
     align-items: center;
 }
 
-/* Novo estilo para centralizar o título e o formulário juntos */
 .main-content {
     display: flex;
-    flex-direction: column; /* Alinha os itens em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
+    flex-direction: column; 
+    align-items: center; 
     text-align: center;
 }
-
-
 
 .form-container {
     background-color: #dcdcdc;
@@ -40,8 +37,6 @@ body, html {
     flex-direction: column;
     align-items: center;
     width: 350px;
-    /* Removido: margin-left: 150px; */
-    /* Removido: margin-right: auto; */
 }
 
 .form-title {
@@ -50,7 +45,9 @@ body, html {
     margin-bottom: 20px;
 }
 
-input[type="text"], input[type="number"], select {
+input[type="text"], 
+input[type="number"], 
+select {
     width: 92%;
     padding: 15px;
     margin-bottom: 15px;
@@ -65,7 +62,6 @@ input[type="text"], input[type="number"], select {
 }
 
 #sexo {
-    /* Ajustado para 100% para manter a centralização. 109% pode causar problemas de layout em alguns navegadores. */
     width: 100%; 
 }
 
@@ -95,6 +91,17 @@ select:invalid {
 
 .btn-confirmar:hover {
     background-color: #888;
+}
+
+#resultado-imc {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    min-height: 25px;
 }
 
 @media (max-width: 768px) {
