@@ -93,16 +93,30 @@ select:invalid {
     background-color: #888;
 }
 
-#resultado-imc {
-    width: 100%;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #555;
-    margin-top: -5px;
+
+
+#resultado-imc-input {
+    width: 92%;
+    padding: 15px;
     margin-bottom: 15px;
-    min-height: 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #888888;
+    font-size: 1em;
+    outline: none;
+    height: auto;
+    line-height: normal;
+    text-align: center; 
+    font-weight: bold; 
 }
+
+
+#resultado-imc-input[readonly] {
+    cursor: default;
+}
+
+
 
 @media (max-width: 768px) {
     .form-container {
