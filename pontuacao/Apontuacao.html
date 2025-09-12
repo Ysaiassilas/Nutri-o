@@ -206,21 +206,23 @@
         }
 
         // ===== FUNÇÕES DE NAVEGAÇÃO =====
-        function prosseguir() {
-            // Salvar dados para possível consulta futura
-            const dados = JSON.parse(sessionStorage.getItem('resultadoAvaliacao'));
-            localStorage.setItem('ultimaAvaliacao', JSON.stringify({
-                ...dados,
-                visualizadoEm: new Date().toISOString()
-            }));
-            
-            // Limpar dados da sessão atual
-            sessionStorage.removeItem('resultadoAvaliacao');
-            
-            // Redirecionar
-            window.location.href = "proximo_passo.html";
-        }
-
+function prosseguir() {
+    // Recupera os dados da avaliação da sessão
+    const dados = JSON.parse(sessionStorage.getItem('resultadoAvaliacao'));
+    
+    // Salva os dados no localStorage para que a página inicial possa ler
+    localStorage.setItem('ultimaAvaliacao', JSON.stringify({
+        ...dados,
+        visualizadoEm: new Date().toISOString(),
+        dataInicio: new Date().toISOString()
+    }));
+    
+    // Limpa os dados da sessão atual (não são mais necessários)
+    sessionStorage.removeItem('resultadoAvaliacao');
+    
+    // Redireciona para a página inicial (ajuste o caminho se necessário)
+    window.location.href = "proximo_passo.html";
+}
         function voltarQuestionario() {
             if (confirm('🔄 Tem certeza que deseja refazer a avaliação? Os dados atuais serão perdidos.')) {
                 // Limpar todos os dados
